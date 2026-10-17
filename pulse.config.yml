@@ -1,0 +1,25 @@
+# weekly-pulse configuration — edit, commit, and both routines use it on their next run.
+
+# Language of issues, PR bodies and changelog entries: en | fr
+language: en
+
+# Repositories to watch (owner/name). Attach each one to both routines too.
+repos:
+  - your-user/your-repo
+
+security:
+  # Confirmed findings at or above this severity make the issue "Action needed".
+  # critical | high | medium | low
+  alert_threshold: high
+  label: "weekly-pulse: security"
+
+docs:
+  window_days: 7
+  changelog: CHANGELOG.md
+  # Files and folders that count as documentation in each watched repo.
+  docs_paths:
+    - README.md
+    - docs/
+  # The weekly branch is <branch_prefix><ISO week>, e.g. claude/weekly-pulse-docs-2026-W42
+  branch_prefix: "claude/weekly-pulse-docs-"
+  label: "weekly-pulse: docs"
