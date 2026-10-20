@@ -61,3 +61,15 @@ It also checks titles, and the staged diff before a docs commit.
 **Decision.** If a repo uses release-please, changesets, git-cliff or semantic-release, the docs pulse doesn't touch the changelog and only fixes doc drift.
 
 **Why.** Those tools generate the changelog from commits; a second writer would conflict with them. Doc drift is the part no such tool covers.
+
+## 2026-10-20 — From cross-repo pulses to one steward per repo
+
+**Decision (owner).** The unit of responsibility is the repository, not the check. Each active repo gets a **steward**: a scheduled agent acting as its project lead, accountable for roadmap progress, security, documentation and continuous improvement. The security and docs pulses become instruments the steward runs. Framing in [STEWARD.md](STEWARD.md).
+
+**Rules set by the owner.** (1) The steward never codes, not even in a new PR; it proposes the next step, the plan and the questions to settle first. (2) No claim about what is done or remaining without an independent check. (3) It may merge and deploy without the owner's review, only behind a formal gate: adversarial review, re-correction, tests, UX walkthroughs, non-regression of neighbouring functions, Playwright.
+
+**Why.** A pass over all repos can report, but can't carry a repo's history, decisions and roadmap from one week to the next. A per-repo steward can. It also removes two problems found on 2026-10-18: attaching every repo to one routine means cloning all of them on each run, and repos owned by collaborators can't be attached to a routine at all (only through the owner's GitHub connector).
+
+**How it starts.** One pilot repo for three weeks, before generalizing. The owner chose the repo he finds hardest to move forward.
+
+**Reopen if** fewer than half of the steward's proposals are accepted over the pilot (the mandate is too wide), or if the gate lets through a regression the owner finds himself (the gate is too weak).

@@ -34,11 +34,17 @@ Pour le changelog, [release-please](https://github.com/googleapis/release-please
 
 Je n'ai pas trouvé les deux tâches réunies sous forme de skills pour routines planifiées, avec une couche de collecte testée et un contrôle qui bloque une fuite avant publication.
 
+## La suite : un chef de projet par dépôt
+
+L'étape suivante est un **chef de repo** : un agent planifié par dépôt, qui en tient le rôle de chef de projet. Il garde un état honnête de la roadmap, propose l'étape suivante et son plan, fait réaliser le travail par un agent exécutant, et ne merge ni ne déploie que derrière une porte formelle (relecture adversariale, tests, parcours UX, non-régression, Playwright). Les deux pulses deviennent des instruments qu'il utilise. Le cadrage est dans [STEWARD.fr.md](STEWARD.fr.md) ; un pilote sur un dépôt démarre en octobre 2026.
+
 ## Organisation du dépôt
 
 ```
 CLAUDE.md                 règles appliquées par l'agent à chaque passage
 DECISIONS.md              décisions de conception datées, et ce qui ferait rouvrir chacune
+STEWARD.md                cadrage du chef de repo (étape suivante du projet)
+stewards/                 modèle de charte pour un dépôt piloté
 pulse.config.yml          dépôts à surveiller et quelques options
 scripts/                  collecteurs, vérificateur de rapport, installation
 tests/                    tests unitaires des scripts

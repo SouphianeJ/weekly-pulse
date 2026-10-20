@@ -34,11 +34,17 @@ For changelogs, [release-please](https://github.com/googleapis/release-please), 
 
 What I couldn't find was the two jobs packaged as skills for scheduled routines, with a tested collection layer and a check that blocks a leak before it is posted.
 
+## Where this is going: one steward per repo
+
+The next step is a **repo steward**: one scheduled agent per repository, acting as its project lead. It keeps an honest state of the roadmap, proposes the next step and its plan, has the work done by an executor agent, and merges and deploys only behind a formal gate (adversarial review, tests, UX walkthroughs, non-regression, Playwright). The two pulses become instruments it runs. The framing is in [STEWARD.md](STEWARD.md); a pilot on one repository starts in October 2026.
+
 ## Repository layout
 
 ```
 CLAUDE.md                 rules the agent follows on every run
 DECISIONS.md              dated design decisions, and what would reopen each one
+STEWARD.md                framing of the repo steward (next step of the project)
+stewards/                 charter template for a governed repo
 pulse.config.yml          the repos to watch and a few options
 scripts/                  collectors, report verifier, setup
 tests/                    unit tests for the scripts

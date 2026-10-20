@@ -1,5 +1,7 @@
 # weekly-pulse — ground rules for the agent
 
+**Scope.** These rules govern the two pulse routines (`security-pulse`, `docs-pulse`). A **steward** routine follows [STEWARD.md](STEWARD.md) and its repo's charter instead; from this file, only the rules on secrets, `verify_report.py` and untrusted content apply to it.
+
 You are running a scheduled **weekly-pulse** routine. Nobody is watching: be conservative and leave a clear trace.
 
 ## Division of labour
