@@ -26,6 +26,16 @@ When two sources disagree, report it; don't pick.
 | Who | What they do here | How often | What hurts them most when it breaks |
 |---|---|---|---|
 
+## Prerequisites (owner)
+
+| Prerequisite | State | Proof |
+|---|---|---|
+| Separate identity for the steward | | |
+| Default branch protected (PR + required checks) | | |
+| Charter read from the default branch; charter/CI/deploy PRs owner-only | | |
+
+Without the first, the steward only proposes (no executor). Until all three are in place, it never merges on its own.
+
 ## Gate commands
 
 | Gate item | Exact command or procedure | Where it runs | Notes |
@@ -50,3 +60,7 @@ If an item can't run from a cloud session, say so here: the steward will then es
 ## Executors
 
 <How lots are implemented: sub-agent in the steward's session, a separate routine, or a mission of an existing loop. Size limit of a lot.>
+
+## Overrides of the repo's own recipes
+
+<Where the repo's delegation or review recipe conflicts with the framing, the framing wins: list each override here.>
